@@ -15,7 +15,7 @@ byte pinesColumnas[COLUMNAS] = {5, 4, 3, 2};
 
 Keypad teclado = Keypad( makeKeymap(teclas), pinesFilas, pinesColumnas, FILAS, COLUMNAS );
 
-const char contrasenaCorrecta[] = "1111"; // Contraseña de 4 dígitos
+const char contrasenaCorrecta[] = "1234"; // Contraseña de 4 dígitos
 char contrasenaIngresada[5];  // Arreglo para almacenar la contraseña ingresada (un espacio extra para el \0)
 int indiceContrasena = 0;      // Índice para llevar el seguimiento de la contraseña ingresada
 
