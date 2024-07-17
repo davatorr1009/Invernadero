@@ -167,8 +167,8 @@ void TareaRiego(void *pvParameters) {
 
     for (;;) {
         // Encender relés
-        digitalWrite(releBomba, HIGH);
-        digitalWrite(releEv1, HIGH);
+        digitalWrite(releBomba, LOW);
+        digitalWrite(releEv1, LOW);
 
         // Enviar mensaje de depuración (opcional)
         
@@ -176,14 +176,14 @@ void TareaRiego(void *pvParameters) {
         lcd.print("    Riego Iniciado...");
         vTaskDelay(pdMS_TO_TICKS(2000));
         lcd.setCursor(0,2);
-        lcd.print("                       ");
+        lcd.print("                      ");
 
         // Esperar el tiempo de riego (ajusta según tus necesidades)
-        vTaskDelay(pdMS_TO_TICKS(5000)); // 5 minutos (300000 ms)
+        vTaskDelay(pdMS_TO_TICKS(4000)); // 5 minutos (300000 ms)
 
         // Apagar relés
-        digitalWrite(releBomba, LOW);
-        digitalWrite(releEv1, LOW);
+        digitalWrite(releBomba, HIGH);
+        digitalWrite(releEv1, HIGH);
         
         lcd.setCursor(0,2);
         lcd.print("    Riego Finalizado...");
@@ -191,7 +191,7 @@ void TareaRiego(void *pvParameters) {
         lcd.setCursor(0,2);
         lcd.print("                       ");
         // Esperar una semana
-        vTaskDelay(pdMS_TO_TICKS(0000)); // 7 días (604800000 ms)
+        vTaskDelay(pdMS_TO_TICKS(20000)); // 7 días (604800000 ms)
     }
 }
 
